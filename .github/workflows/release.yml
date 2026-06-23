@@ -1,0 +1,44 @@
+name: release-hap
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: "要发布的 git tag"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.tag_name || github.ref_name }}
+
+      - name: Build signed HAP
+        run: |
+          export DEVECO_SDK_HOME=/Applications/DevEco-Studio.app/Contents/sdk
+          export JAVA_HOME=/Applications/DevEco-Studio.app/Contents/jbr/Contents/Home
+          export PATH=/Applications/DevEco-Studio.app/Contents/jbr/Contents/Home/bin:/Applications/DevEco-Studio.app/Contents/tools/node/bin:$PATH
+          /Applications/DevEco-Studio.app/Contents/tools/hvigor/bin/hvigorw assembleHap -p product=default -p buildMode=release --no-daemon
+
+      - name: Upload GitHub Release asset
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event_name == 'workflow_dispatch' && inputs.tag_name || github.ref_name }}
+          name: HoBle ${{ github.event_name == 'workflow_dispatch' && inputs.tag_name || github.ref_name }}
+          generate_release_notes: true
+          fail_on_unmatched_files: true
+          overwrite_files: true
+          files: entry/build/default/outputs/default/entry-default-signed.hap
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
