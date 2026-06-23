@@ -1,0 +1,52 @@
+{
+  "color": [
+    {
+      "name": "start_window_background",
+      "value": "#000000"
+    },
+    {
+      "name": "guard_page_background",
+      "value": "#101418"
+    },
+    {
+      "name": "guard_card_background",
+      "value": "#1D242C"
+    },
+    {
+      "name": "guard_text_primary",
+      "value": "#F1F3F5"
+    },
+    {
+      "name": "guard_text_secondary",
+      "value": "#AEB6C0"
+    },
+    {
+      "name": "guard_warning",
+      "value": "#FFD18A"
+    },
+    {
+      "name": "guard_warning_background",
+      "value": "#3A2B14"
+    },
+    {
+      "name": "guard_primary",
+      "value": "#6EA8FF"
+    },
+    {
+      "name": "guard_primary_soft",
+      "value": "#233348"
+    },
+    {
+      "name": "guard_status_item_background",
+      "value": "#172029"
+    },
+    {
+      "name": "guard_status_item_active_background",
+      "value": "#1F3146"
+    },
+    {
+      "name": "guard_status_item_border",
+      "value": "#2B3642"
+    }
+  ]
+}

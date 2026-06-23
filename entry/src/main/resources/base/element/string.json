@@ -1,0 +1,104 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "BLE 后台守护模块"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "BLE 后台守护入口"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "HoBle Guard"
+    },
+    {
+      "name": "guard_title",
+      "value": "HoBle 后台守护"
+    },
+    {
+      "name": "guard_limit_notice",
+      "value": "系统不保证锁屏后 BLE 广播长期稳定，本应用会通过官方长时任务尽力维持并记录失败原因。"
+    },
+    {
+      "name": "guard_status_title",
+      "value": "运行状态"
+    },
+    {
+      "name": "guard_run_state",
+      "value": "守护状态"
+    },
+    {
+      "name": "guard_ble_state",
+      "value": "蓝牙状态"
+    },
+    {
+      "name": "guard_permission_state",
+      "value": "权限状态"
+    },
+    {
+      "name": "guard_advertising_state",
+      "value": "广播状态"
+    },
+    {
+      "name": "guard_background_state",
+      "value": "后台任务"
+    },
+    {
+      "name": "guard_device_title",
+      "value": "广播标识"
+    },
+    {
+      "name": "guard_control_title",
+      "value": "广播标识与操作"
+    },
+    {
+      "name": "guard_device_placeholder",
+      "value": "输入 Mac 端识别名称"
+    },
+    {
+      "name": "guard_save_device",
+      "value": "保存标识"
+    },
+    {
+      "name": "guard_actions_title",
+      "value": "操作"
+    },
+    {
+      "name": "guard_request_permission",
+      "value": "请求权限"
+    },
+    {
+      "name": "guard_start",
+      "value": "启动守护"
+    },
+    {
+      "name": "guard_stop",
+      "value": "停止守护"
+    },
+    {
+      "name": "guard_refresh",
+      "value": "刷新状态"
+    },
+    {
+      "name": "guard_log_title",
+      "value": "诊断日志"
+    },
+    {
+      "name": "guard_log_empty",
+      "value": "暂无日志"
+    },
+    {
+      "name": "permission_bluetooth_reason",
+      "value": "用于启动 BLE 广播并让 Mac 端持续发现本设备。"
+    },
+    {
+      "name": "permission_location_reason",
+      "value": "系统要求附近设备发现能力关联位置权限，用于 BLE 广播状态检测。"
+    },
+    {
+      "name": "permission_background_reason",
+      "value": "用于申请蓝牙交互长时任务，尽可能维持锁屏后的 BLE 广播。"
+    }
+  ]
+}
