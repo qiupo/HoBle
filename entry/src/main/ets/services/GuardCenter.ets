@@ -83,7 +83,7 @@ export class GuardCenter {
       this.snapshot.advertising = this.advertiser.isAdvertising();
       await this.backgroundTaskService.start();
       this.snapshot.backgroundRunning = this.backgroundTaskService.isRunning();
-      this.syncRunState();
+      this.syncRunState(true);
       this.logStore.info('BLE 广播与长时任务已启动');
       await this.saveEnabled(true);
       this.publish('守护运行中，锁屏后仍会尽力维持广播');
@@ -135,8 +135,8 @@ export class GuardCenter {
     this.syncRunState();
   }
 
-  private syncRunState(): void {
-    if (this.snapshot.runState === GuardRunState.STARTING || this.snapshot.runState === GuardRunState.STOPPING) {
+  private syncRunState(force: boolean = false): void {
+    if (!force && (this.snapshot.runState === GuardRunState.STARTING || this.snapshot.runState === GuardRunState.STOPPING)) {
       return;
     }
     if (this.snapshot.advertising && this.snapshot.backgroundRunning) {

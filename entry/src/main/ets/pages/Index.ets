@@ -85,7 +85,7 @@ struct Index {
       }
       .width('100%')
 
-      Button(this.isGuardActive() ? $r('app.string.guard_stop') : $r('app.string.guard_start'))
+      Button(this.hasGuardResidue() ? $r('app.string.guard_stop') : $r('app.string.guard_start'))
         .width('100%')
         .height(48)
         .borderRadius(16)
@@ -93,7 +93,7 @@ struct Index {
         .fontWeight(FontWeight.Medium)
         .enabled(this.snapshot.runState !== GuardRunState.STARTING && this.snapshot.runState !== GuardRunState.STOPPING)
         .onClick(() => {
-          if (this.isGuardActive()) {
+          if (this.hasGuardResidue()) {
             this.guardCenter?.stopGuard();
           } else {
             this.guardCenter?.startGuard();
@@ -171,11 +171,15 @@ struct Index {
     return this.snapshot.advertising && this.snapshot.backgroundRunning;
   }
 
+  private hasGuardResidue(): boolean {
+    return this.snapshot.advertising || this.snapshot.backgroundRunning;
+  }
+
   private guardRunStateText(): string {
     if (this.isGuardActive()) {
       return GuardRunState.RUNNING.toString();
     }
-    if (this.snapshot.advertising || this.snapshot.backgroundRunning) {
+    if (this.hasGuardResidue()) {
       return GuardRunState.FAILED.toString();
     }
     return this.snapshot.runState.toString();
