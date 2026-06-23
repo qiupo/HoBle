@@ -94,11 +94,15 @@
     },
     {
       "name": "permission_location_reason",
-      "value": "系统要求附近设备发现能力关联位置权限，用于 BLE 广播状态检测。"
+      "value": "系统要求附近设备发现能力关联位置权限，用于 BLE 广播状态检测与后台维持。"
+    },
+    {
+      "name": "permission_location_background_reason",
+      "value": "用于在锁屏后配合定位长时任务唤起守护服务，尽量维持 BLE 广播。"
     },
     {
       "name": "permission_background_reason",
-      "value": "用于申请蓝牙交互长时任务，尽可能维持锁屏后的 BLE 广播。"
+      "value": "用于申请蓝牙交互和定位长时任务，尽可能维持锁屏后的 BLE 广播。"
     }
   ]
 }

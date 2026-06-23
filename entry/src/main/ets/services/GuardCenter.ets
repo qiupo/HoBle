@@ -22,6 +22,16 @@ export class GuardCenter {
     this.settingsStore = new SettingsStore(config.context);
     this.permissionService = new PermissionService(config.context);
     this.backgroundTaskService = new BackgroundTaskService(config.context, config.bundleName, config.abilityName);
+    this.advertiser.setStatusListener((advertising: boolean) => {
+      this.snapshot.advertising = advertising;
+      this.syncRunState();
+      this.publish(advertising ? 'BLE 广播已恢复' : 'BLE 广播已停止');
+    });
+    this.backgroundTaskService.setStatusListener((running: boolean) => {
+      this.snapshot.backgroundRunning = running;
+      this.syncRunState();
+      this.publish(running ? '后台长时任务已恢复' : '后台长时任务已停止');
+    });
   }
 
   subscribe(listener: GuardListener): void {
@@ -41,14 +51,16 @@ export class GuardCenter {
   }
 
   async requestPermissions(): Promise<void> {
+    this.publish('正在请求权限');
     try {
       this.snapshot.permissionGranted = await this.permissionService.request();
       if (this.snapshot.permissionGranted) {
         this.logStore.info('权限授权完成');
         this.publish('权限已授权');
       } else {
-        this.logStore.warn('部分权限未授权，后台广播可能失败');
-        this.publish('权限不完整');
+        const permissionMessage: string = this.buildPermissionMessage();
+        this.logStore.warn(`${permissionMessage}。后台广播可能失败`);
+        this.publish(permissionMessage);
       }
     } catch (err) {
       this.logStore.error(`权限请求失败：${this.formatError(err)}`);
@@ -65,20 +77,21 @@ export class GuardCenter {
         throw new Error('系统蓝牙未开启');
       }
       if (!this.snapshot.permissionGranted) {
-        throw new Error('权限未授权');
+        throw new Error(this.buildPermissionMessage());
       }
       await this.advertiser.start(this.snapshot.deviceId);
       this.snapshot.advertising = this.advertiser.isAdvertising();
       await this.backgroundTaskService.start();
       this.snapshot.backgroundRunning = this.backgroundTaskService.isRunning();
-      this.snapshot.runState = GuardRunState.RUNNING;
+      this.syncRunState();
       this.logStore.info('BLE 广播与长时任务已启动');
       await this.saveEnabled(true);
       this.publish('守护运行中，锁屏后仍会尽力维持广播');
     } catch (err) {
       this.snapshot.runState = GuardRunState.FAILED;
-      this.logStore.error(`启动失败：${this.formatError(err)}`);
-      this.publish('启动失败，请检查蓝牙、权限与系统后台限制');
+      const errorMessage: string = this.formatError(err);
+      this.logStore.error(`启动失败：${errorMessage}`);
+      this.publish(`启动失败：${errorMessage}`);
     }
   }
 
@@ -119,10 +132,19 @@ export class GuardCenter {
     this.snapshot.permissionGranted = this.permissionService.hasAll();
     this.snapshot.advertising = this.advertiser.isAdvertising();
     this.snapshot.backgroundRunning = await this.backgroundTaskService.refresh();
-    if (this.snapshot.advertising || this.snapshot.backgroundRunning) {
+    this.syncRunState();
+  }
+
+  private syncRunState(): void {
+    if (this.snapshot.runState === GuardRunState.STARTING || this.snapshot.runState === GuardRunState.STOPPING) {
+      return;
+    }
+    if (this.snapshot.advertising && this.snapshot.backgroundRunning) {
       this.snapshot.runState = GuardRunState.RUNNING;
-    } else if (this.snapshot.runState === GuardRunState.RUNNING) {
+    } else if (this.snapshot.advertising || this.snapshot.backgroundRunning) {
       this.snapshot.runState = GuardRunState.FAILED;
+    } else if (this.snapshot.runState === GuardRunState.RUNNING || this.snapshot.runState === GuardRunState.FAILED) {
+      this.snapshot.runState = GuardRunState.STOPPED;
     }
   }
 
@@ -135,6 +157,14 @@ export class GuardCenter {
 
   private refreshBluetoothState(): void {
     this.snapshot.blePowerState = this.advertiser.isBluetoothOn() ? BlePowerState.ON : BlePowerState.OFF;
+  }
+
+  private buildPermissionMessage(): string {
+    const missingPermissionText: string = this.permissionService.getMissingPermissionText();
+    if (missingPermissionText.indexOf('后台位置') >= 0) {
+      return `缺少权限：${missingPermissionText}，请在系统设置中允许后台位置`;
+    }
+    return `缺少权限：${missingPermissionText}`;
   }
 
   private formatError(err: Object): string {

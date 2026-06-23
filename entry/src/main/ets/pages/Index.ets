@@ -168,11 +168,17 @@ struct Index {
   }
 
   private isGuardActive(): boolean {
-    return this.snapshot.runState === GuardRunState.RUNNING || this.snapshot.advertising || this.snapshot.backgroundRunning;
+    return this.snapshot.advertising && this.snapshot.backgroundRunning;
   }
 
   private guardRunStateText(): string {
-    return this.isGuardActive() ? GuardRunState.RUNNING.toString() : this.snapshot.runState.toString();
+    if (this.isGuardActive()) {
+      return GuardRunState.RUNNING.toString();
+    }
+    if (this.snapshot.advertising || this.snapshot.backgroundRunning) {
+      return GuardRunState.FAILED.toString();
+    }
+    return this.snapshot.runState.toString();
   }
 
   @Builder

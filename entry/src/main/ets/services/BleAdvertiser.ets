@@ -4,6 +4,23 @@ const MANUFACTURER_ID: number = 0x0B1E;
 
 export class BleAdvertiser {
   private advertising: boolean = false;
+  private advertisingId: number = -1;
+  private statusListener?: (advertising: boolean) => void;
+  private advertisingStateChangeCallback = (info: ble.AdvertisingStateChangeInfo): void => {
+    if (this.advertisingId >= 0 && info.advertisingId !== this.advertisingId) {
+      return;
+    }
+    this.advertising = info.state === ble.AdvertisingState.STARTED || info.state === ble.AdvertisingState.ENABLED;
+    this.statusListener?.(this.advertising);
+  };
+
+  constructor() {
+    try {
+      ble.on('advertisingStateChange', this.advertisingStateChangeCallback);
+    } catch (err) {
+      // The guard can still run on devices that do not support advertising callbacks.
+    }
+  }
 
   isBluetoothOn(): boolean {
     try {
@@ -15,6 +32,10 @@ export class BleAdvertiser {
 
   isAdvertising(): boolean {
     return this.advertising;
+  }
+
+  setStatusListener(listener: (advertising: boolean) => void): void {
+    this.statusListener = listener;
   }
 
   async start(deviceId: string): Promise<void> {
@@ -34,16 +55,31 @@ export class BleAdvertiser {
       }],
       serviceData: []
     };
-    ble.startAdvertising(params, data);
+    try {
+      this.advertisingId = await ble.startAdvertising({
+        advertisingSettings: params,
+        advertisingData: data
+      });
+    } catch (err) {
+      ble.startAdvertising(params, data);
+      this.advertisingId = -1;
+    }
     this.advertising = true;
+    this.statusListener?.(true);
   }
 
   async stop(): Promise<void> {
     if (!this.advertising) {
       return;
     }
-    ble.stopAdvertising();
+    if (this.advertisingId >= 0) {
+      await ble.stopAdvertising(this.advertisingId);
+    } else {
+      ble.stopAdvertising();
+    }
+    this.advertisingId = -1;
     this.advertising = false;
+    this.statusListener?.(false);
   }
 
   private toBytes(value: string): ArrayBuffer {
