@@ -2,8 +2,7 @@ import { abilityAccessCtrl, common, PermissionRequestResult, Permissions } from 
 
 const FOREGROUND_PERMISSIONS: Array<Permissions> = [
   'ohos.permission.ACCESS_BLUETOOTH',
-  'ohos.permission.APPROXIMATELY_LOCATION',
-  'ohos.permission.LOCATION'
+  'ohos.permission.APPROXIMATELY_LOCATION'
 ];
 
 const BACKGROUND_PERMISSIONS: Array<Permissions> = [
@@ -13,14 +12,13 @@ const BACKGROUND_PERMISSIONS: Array<Permissions> = [
 const USER_PERMISSIONS: Array<Permissions> = [
   'ohos.permission.ACCESS_BLUETOOTH',
   'ohos.permission.APPROXIMATELY_LOCATION',
-  'ohos.permission.LOCATION',
   'ohos.permission.LOCATION_IN_BACKGROUND'
 ];
 
 export class PermissionService {
-  private context: common.UIAbilityContext;
+  private context: common.Context;
 
-  constructor(context: common.UIAbilityContext) {
+  constructor(context: common.Context) {
     this.context = context;
   }
 
@@ -95,7 +93,7 @@ export class PermissionService {
   private async requestPermissionGroup(permissions: Array<Permissions>): Promise<boolean> {
     try {
       const atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
-      const result: PermissionRequestResult = await atManager.requestPermissionsFromUser(this.context, permissions);
+      const result: PermissionRequestResult = await atManager.requestPermissionsFromUser(this.context as common.UIAbilityContext, permissions);
       for (let index: number = 0; index < result.authResults.length; index++) {
         if (result.authResults[index] !== 0) {
           return false;
@@ -113,9 +111,6 @@ export class PermissionService {
     }
     if (permission === 'ohos.permission.APPROXIMATELY_LOCATION') {
       return '大致位置';
-    }
-    if (permission === 'ohos.permission.LOCATION') {
-      return '精确位置';
     }
     if (permission === 'ohos.permission.LOCATION_IN_BACKGROUND') {
       return '后台位置';

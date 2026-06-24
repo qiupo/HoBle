@@ -3,14 +3,16 @@ import { backgroundTaskManager } from '@kit.BackgroundTasksKit';
 import { geoLocationManager } from '@kit.LocationKit';
 
 type BackgroundTaskListener = (running: boolean) => void;
+type BackgroundTaskEventListener = (message: string, critical: boolean) => void;
 
 export class BackgroundTaskService {
-  private context: common.UIAbilityContext;
+  private context: common.Context;
   private bundleName: string;
   private abilityName: string;
   private running: boolean = false;
   private continuousTaskId: number = 0;
   private statusListener?: BackgroundTaskListener;
+  private eventListener?: BackgroundTaskEventListener;
   private locationActive: boolean = false;
   private locationCallback = (_location: geoLocationManager.Location): void => {
   };
@@ -21,6 +23,7 @@ export class BackgroundTaskService {
     this.running = false;
     this.continuousTaskId = 0;
     this.stopLocationWatcher();
+    this.eventListener?.(`后台长时任务被系统取消，任务 ID：${info.id}`, true);
     this.statusListener?.(false);
   };
   private continuousTaskSuspendCallback = (info: backgroundTaskManager.ContinuousTaskSuspendInfo): void => {
@@ -30,6 +33,9 @@ export class BackgroundTaskService {
     this.running = !info.suspendState;
     if (!this.running) {
       this.stopLocationWatcher();
+      this.eventListener?.(`后台长时任务已暂停，任务 ID：${info.continuousTaskId}`, true);
+    } else {
+      this.eventListener?.(`后台长时任务已恢复，任务 ID：${info.continuousTaskId}`, false);
     }
     this.statusListener?.(this.running);
   };
@@ -38,10 +44,11 @@ export class BackgroundTaskService {
       return;
     }
     this.running = true;
+    this.eventListener?.(`后台长时任务已激活，任务 ID：${info.id}`, false);
     this.statusListener?.(true);
   };
 
-  constructor(context: common.UIAbilityContext, bundleName: string, abilityName: string) {
+  constructor(context: common.Context, bundleName: string, abilityName: string) {
     this.context = context;
     this.bundleName = bundleName;
     this.abilityName = abilityName;
@@ -50,6 +57,10 @@ export class BackgroundTaskService {
 
   setStatusListener(listener: BackgroundTaskListener): void {
     this.statusListener = listener;
+  }
+
+  setEventListener(listener: BackgroundTaskEventListener): void {
+    this.eventListener = listener;
   }
 
   async start(): Promise<void> {

@@ -32,16 +32,6 @@
         }
       },
       {
-        "name": "ohos.permission.LOCATION",
-        "reason": "$string:permission_location_reason",
-        "usedScene": {
-          "abilities": [
-            "EntryAbility"
-          ],
-          "when": "inuse"
-        }
-      },
-      {
         "name": "ohos.permission.LOCATION_IN_BACKGROUND",
         "reason": "$string:permission_location_background_reason",
         "usedScene": {
@@ -89,6 +79,20 @@
       }
     ],
     "extensionAbilities": [
+      {
+        "name": "EntryFormAbility",
+        "srcEntry": "./ets/entryformability/EntryFormAbility.ets",
+        "label": "$string:guard_widget_display_name",
+        "description": "$string:guard_widget_desc",
+        "type": "form",
+        "exported": true,
+        "metadata": [
+          {
+            "name": "ohos.extension.form",
+            "resource": "$profile:form_config"
+          }
+        ]
+      },
       {
         "name": "EntryBackupAbility",
         "srcEntry": "./ets/entrybackupability/EntryBackupAbility.ets",

@@ -1,11 +1,15 @@
 import { AbilityConstant, ConfigurationConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
+import { setLastLaunchParam } from '../services/LaunchDiagnosticsStore';
+import { requestWidgetAction } from '../services/WidgetActionStore';
 
 const DOMAIN = 0x0000;
 
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    setLastLaunchParam(launchParam);
+    this.handleWidgetLaunchWant(want);
     try {
       this.context.getApplicationContext().setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
     } catch (err) {
@@ -16,6 +20,11 @@ export default class EntryAbility extends UIAbility {
 
   onDestroy(): void {
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onDestroy');
+  }
+
+  onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    setLastLaunchParam(launchParam);
+    this.handleWidgetLaunchWant(want);
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
@@ -45,4 +54,15 @@ export default class EntryAbility extends UIAbility {
     // Ability has back to background
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onBackground');
   }
+
+  private handleWidgetLaunchWant(want: Want): void {
+    if (want.parameters === undefined) {
+      return;
+    }
+    const action: Object | undefined = want.parameters['action'];
+    if (typeof action === 'string' && action.length > 0) {
+      requestWidgetAction(action);
+    }
+  }
+
 }

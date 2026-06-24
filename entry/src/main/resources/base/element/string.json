@@ -17,6 +17,14 @@
       "value": "HoBle 后台守护"
     },
     {
+      "name": "guard_widget_display_name",
+      "value": "HoBle 守护状态"
+    },
+    {
+      "name": "guard_widget_desc",
+      "value": "显示 HoBle 守护启用状态、最近运行状态和后台广播状态。"
+    },
+    {
       "name": "guard_limit_notice",
       "value": "系统不保证锁屏后 BLE 广播长期稳定，本应用会通过官方长时任务尽力维持并记录失败原因。"
     },
@@ -43,6 +51,26 @@
     {
       "name": "guard_background_state",
       "value": "后台任务"
+    },
+    {
+      "name": "guard_diagnostics_title",
+      "value": "系统诊断"
+    },
+    {
+      "name": "guard_last_exit_reason",
+      "value": "上次退出"
+    },
+    {
+      "name": "guard_system_kill_count",
+      "value": "查杀事件"
+    },
+    {
+      "name": "guard_last_system_event",
+      "value": "系统事件"
+    },
+    {
+      "name": "guard_last_background_event",
+      "value": "后台事件"
     },
     {
       "name": "guard_device_title",
@@ -81,12 +109,36 @@
       "value": "刷新状态"
     },
     {
+      "name": "guard_copy_pairing_config",
+      "value": "复制 Mac 匹配配置"
+    },
+    {
       "name": "guard_log_title",
       "value": "诊断日志"
     },
     {
       "name": "guard_log_empty",
       "value": "暂无日志"
+    },
+    {
+      "name": "guard_log_filter_all",
+      "value": "全部"
+    },
+    {
+      "name": "guard_log_filter_error",
+      "value": "异常"
+    },
+    {
+      "name": "guard_log_filter_system",
+      "value": "系统"
+    },
+    {
+      "name": "guard_log_filter_ble",
+      "value": "BLE"
+    },
+    {
+      "name": "guard_log_filter_background",
+      "value": "后台"
     },
     {
       "name": "permission_bluetooth_reason",

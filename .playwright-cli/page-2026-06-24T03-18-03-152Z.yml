@@ -1,0 +1,1055 @@
+- generic [ref=e5]:
+  - generic [ref=e10]:
+    - generic [ref=e12]:
+      - link [ref=e13]:
+        - /url: javascript:void(0);
+        - img [ref=e15]
+      - generic [ref=e27]:
+        - generic [ref=e28] [cursor=pointer]:
+          - generic [ref=e29]: 简体中文
+          - img [ref=e31]
+        - link "下载 App" [ref=e33] [cursor=pointer]:
+          - /url: https://developer.huawei.com/consumer/cn/huawei-app/
+          - generic [ref=e34]: 下载 App
+    - generic [ref=e35]:
+      - link [ref=e36] [cursor=pointer]:
+        - /url: /consumer/cn/
+        - img [ref=e38]
+      - generic [ref=e40]:
+        - list [ref=e41]:
+          - listitem [ref=e42] [cursor=pointer]: 探索
+          - listitem [ref=e43] [cursor=pointer]: 设计
+          - listitem [ref=e44] [cursor=pointer]: 开发
+          - listitem [ref=e45] [cursor=pointer]: 分发
+          - listitem [ref=e46] [cursor=pointer]: 推广与变现
+          - listitem [ref=e47] [cursor=pointer]: 生态合作
+          - listitem [ref=e48] [cursor=pointer]: 支持
+        - listitem [ref=e49]: 更多
+        - list [ref=e51]:
+          - listitem [ref=e52] [cursor=pointer]:
+            - link "探索" [ref=e55]:
+              - /url: /consumer/cn/discover/
+              - generic [ref=e56]: 探索
+          - listitem [ref=e57] [cursor=pointer]:
+            - link "设计" [ref=e60]:
+              - /url: /consumer/cn/design/
+              - generic [ref=e61]: 设计
+          - listitem [ref=e62] [cursor=pointer]:
+            - link "开发" [ref=e65]:
+              - /url: /consumer/cn/develop/
+              - generic [ref=e66]: 开发
+          - listitem [ref=e67] [cursor=pointer]:
+            - link "分发" [ref=e70]:
+              - /url: /consumer/cn/distribute/
+              - generic [ref=e71]: 分发
+          - listitem [ref=e72] [cursor=pointer]:
+            - link "推广与变现" [ref=e75]:
+              - /url: /consumer/cn/promote/
+              - generic [ref=e76]: 推广与变现
+          - listitem [ref=e77] [cursor=pointer]: 更多
+      - generic [ref=e79]:
+        - generic [ref=e82]:
+          - generic [ref=e83]:
+            - generic [ref=e84]: 输入关键字搜索
+            - generic [ref=e85]: 开发者能力认证
+            - generic [ref=e86]: 鸿蒙高校创新赛
+            - generic [ref=e87]: HarmonyOS 7
+            - generic [ref=e88]: animation
+            - generic [ref=e89]: HarmonyOS行业解决方案
+            - generic [ref=e90]: layoutWeight
+            - generic [ref=e91]: HarmonyOS模板&组件
+            - generic [ref=e92]: bindPopup
+            - generic [ref=e93]: bindsheet
+            - generic [ref=e94]: RelativeContainer
+            - generic [ref=e95]: CustomDialogController
+            - generic [ref=e96]: animateTo
+          - textbox "输入关键字搜索" [ref=e97]
+          - generic [ref=e99]: CTRL+K
+          - img [ref=e101] [cursor=pointer]
+        - link "文档" [ref=e103] [cursor=pointer]:
+          - /url: /consumer/cn/doc/
+        - link "管理中心" [ref=e104] [cursor=pointer]:
+          - /url: /consumer/cn/console
+      - img [ref=e111] [cursor=pointer]
+  - generic [ref=e116]:
+    - generic [ref=e121]:
+      - paragraph [ref=e123]: HarmonyOS
+      - list [ref=e128]:
+        - listitem [ref=e129]:
+          - link "版本说明" [ref=e130] [cursor=pointer]:
+            - /url: /consumer/cn/doc/harmonyos-releases/overview-503-beta1?istab=1&m=1
+        - listitem [ref=e131]:
+          - link "指南" [ref=e132] [cursor=pointer]:
+            - /url: /consumer/cn/doc/harmonyos-guides/application-dev-guide?istab=1&m=1
+        - listitem [ref=e133]:
+          - link "API参考" [ref=e134] [cursor=pointer]:
+            - /url: /consumer/cn/doc/harmonyos-references/development-intro-api?istab=1&m=1
+        - listitem [ref=e135]:
+          - link "最佳实践" [ref=e136] [cursor=pointer]:
+            - /url: /consumer/cn/doc/best-practices/bpta-best-practices-overview?istab=1&m=1
+        - listitem [ref=e137]:
+          - link "FAQ" [ref=e138] [cursor=pointer]:
+            - /url: /consumer/cn/doc/harmonyos-faqs/faqs-ability-kit?istab=1&m=1
+        - listitem [ref=e139]:
+          - link "变更预告" [ref=e140] [cursor=pointer]:
+            - /url: /consumer/cn/doc/harmonyos-roadmap/changelogs-pre?istab=1&m=1
+        - listitem [ref=e141] [cursor=pointer]: 更多
+    - generic [ref=e198]:
+      - generic [ref=e202]:
+        - heading "OS新增和增强特性" [level=1] [ref=e203]
+        - generic [ref=e204]:
+          - generic [ref=e205]: "更新时间: 2026-06-12 14:54"
+          - generic [ref=e206]:
+            - img [ref=e213]
+            - img [ref=e221] [cursor=pointer]
+      - generic [ref=e230]:
+        - generic [ref=e231]:
+          - generic [ref=e232]: 本文导读
+          - generic [ref=e235]:
+            - generic [ref=e237]:
+              - link "6.1.0(23) Release新增关键特性" [ref=e239] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section1624044721017
+              - link "6.1.0(23) Beta2新增关键特性" [ref=e241] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section19210181872418
+              - link "Ability Kit" [ref=e243] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section49285162019
+              - link "ArkUI" [ref=e245] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section1380622911241
+              - link "Basic Services Kit" [ref=e247] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section126411859145318
+              - link "Connectivity Kit" [ref=e249] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section798624145710
+              - link "Graphics Accelerate Kit" [ref=e251] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section155922544561
+              - link "Share Kit" [ref=e253] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section102516141449
+              - link "Spatial Recon Kit" [ref=e255] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section1293118392081
+              - link "6.1.0(23) Beta1新增关键特性" [ref=e257] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section337415245020
+              - link "Ability Kit" [ref=e259] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section649310183818
+              - link "AppGallery Kit" [ref=e261] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section117347414017
+              - link "App Linking Kit" [ref=e263] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section1184825145014
+              - link "AR Engine" [ref=e265] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section1931313735418
+              - link "ArkTS" [ref=e267] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section1654815214815
+              - link "ArkUI" [ref=e269] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section8122174555414
+              - link "ArkWeb" [ref=e271] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section131332493115
+              - link "Audio Kit" [ref=e273] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section15443184814125
+              - link "AVCodec Kit" [ref=e275] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section1711561212315
+              - link "Basic Service Kit" [ref=e277] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section4582152892717
+              - link "Call Service Kit" [ref=e279] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section4471165015
+              - link "Camera Kit" [ref=e281] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section20438925165312
+              - link "Cloud Foundation Kit" [ref=e283] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section1390002716506
+              - link "Connectivity Kit" [ref=e285] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section37462426247
+              - link "Crypto Architecture Kit" [ref=e287] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section1722184551517
+              - link "Enterprise Space Kit" [ref=e289] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section1751116134812
+              - link "Form Kit" [ref=e291] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section922125744015
+              - link "Game Service Kit" [ref=e293] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section22126441012
+              - link "Graphics Accelerate Kit" [ref=e295] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section16935429918
+              - link "IAP Kit" [ref=e297] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section115312010122
+              - link "Image Kit" [ref=e299] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section6365457195012
+              - link "Live View Kit" [ref=e301] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section1095817710197
+              - link "Map Kit" [ref=e303] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section18821150145815
+              - link "NearLink Kit" [ref=e305] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section12639204213814
+              - link "MDM Kit" [ref=e307] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section12972163914352
+              - link "Media Kit" [ref=e309] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section356083654015
+              - link "Media Library Kit" [ref=e311] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section978374314545
+              - link "Network Kit" [ref=e313] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section32710351876
+              - link "Notification Kit" [ref=e315] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section64072339134
+              - link "Payment Kit" [ref=e317] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section119028253102
+              - link "PDF Kit" [ref=e319] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section07201031155513
+              - link "Pen Kit" [ref=e321] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section15533247144520
+              - link "Performance Analysis Kit" [ref=e323] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section195721345113915
+              - link "Preview Kit" [ref=e325] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section179951525319
+              - link "Remote Communication Kit" [ref=e327] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section681263418918
+              - link "Scan Kit" [ref=e329] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section1274484614717
+              - link "Telephony Kit" [ref=e331] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section19619105114326
+              - link "UI Design Kit" [ref=e333] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section192810422511
+              - link "Universal Keystore Kit" [ref=e335] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section14362248104514
+              - link "Weather Service Kit" [ref=e337] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section10346163015513
+              - link "调测调优" [ref=e339] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-610#section5258611104520
+            - generic [ref=e340] [cursor=pointer]:
+              - generic [ref=e341]: 展开章节
+              - img [ref=e343]
+        - generic [ref=e349]:
+          - generic [ref=e350]:
+            - heading "6.1.0(23) Release新增关键特性" [level=2] [ref=e351]
+            - paragraph [ref=e352]: 6.1.0(23) Release在Beta2版本基础上未引入新增特性。
+          - heading "6.1.0(23) Beta2新增关键特性" [level=2] [ref=e354]
+          - generic [ref=e355]:
+            - heading "Ability Kit" [level=3] [ref=e356]
+            - paragraph [ref=e357]:
+              - text: BundleInfo新增buildVersion。（
+              - link "API参考" [ref=e358] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bundlemanager-bundleinfo#bundleinfo-1
+              - text: ）
+          - generic [ref=e359]:
+            - heading "ArkUI" [level=3] [ref=e360]
+            - list [ref=e361]:
+              - listitem [ref=e362]:
+                - text: 新增支持设置自定义键盘在输入框之间切换时是否接续（即不收回）。（
+                - link "API参考" [ref=e363] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-uicontext-uicontext#setcustomkeyboardcontinuefeature23
+                - text: ）
+              - listitem [ref=e364]:
+                - text: 跑马灯ArkTS API的初始化参数新增两轮跑马灯之间的间距“spacing”和每次滚动的时间间隔“delay”。（
+                - link "API参考" [ref=e365] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-marquee#marqueeoptions18对象说明
+                - text: ）
+              - listitem [ref=e366]:
+                - text: 跑马灯C API新增
+                - link "设置" [ref=e367] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-type-h#oh_arkui_textmarqueeoptions_setspacing
+                - text: 和
+                - link "获取" [ref=e368] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-type-h#oh_arkui_textmarqueeoptions_getspacing
+                - text: 间距、
+                - link "设置" [ref=e369] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-type-h#oh_arkui_textmarqueeoptions_setloop
+                - text: 和
+                - link "获取" [ref=e370] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-type-h#oh_arkui_textmarqueeoptions_getloop
+                - text: 重复滚动次数、
+                - link "设置" [ref=e371] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-type-h#oh_arkui_textmarqueeoptions_setfromstart
+                - text: 和
+                - link "获取" [ref=e372] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-type-h#oh_arkui_textmarqueeoptions_getfromstart
+                - text: 运行方向、
+                - link "设置" [ref=e373] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-type-h#oh_arkui_textmarqueeoptions_setdelay
+                - text: 和
+                - link "获取" [ref=e374] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-type-h#oh_arkui_textmarqueeoptions_getdelay
+                - text: 滚动时间间隔的能力。
+              - listitem [ref=e375]:
+                - text: 组件布局位置设置新增定义在相对容器中子组件在
+                - link "水平方向" [ref=e376] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-location#horizontalalignparam23对象说明
+                - text: 和
+                - link "垂直方向" [ref=e377] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-location#verticalalignparam23对象说明
+                - text: 上的对齐规则。
+              - listitem [ref=e378]:
+                - text: 滚动组件新增模拟拖拽功能，支持开启/关闭模拟拖拽功能、设置模拟拖拽距离以及获取是否处于模拟拖拽状态的能力。（
+                - link "ArkTS API参考" [ref=e379] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-swiper#startfakedrag23
+                - text: 、
+                - link "C API参考" [ref=e380] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-node-h#oh_arkui_swiper_startfakedrag
+                - text: ）
+          - generic [ref=e381]:
+            - heading "Basic Services Kit" [level=3] [ref=e382]
+            - list [ref=e383]:
+              - listitem [ref=e384]:
+                - text: 新增用于消除API产生的告警的API注解能力。在源码用此注解后，编译时会根据配置的规则来抑制对应警告。（
+                - link "API参考" [ref=e385] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-annotation#suppresswarnings23
+                - text: ）
+              - listitem [ref=e386]:
+                - text: 新增支持查询免打扰的相关功能的开启状态。（
+                - link "API参考" [ref=e387] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-intelligentscene
+                - text: ）
+          - generic [ref=e388]:
+            - heading "Connectivity Kit" [level=3] [ref=e389]
+            - paragraph [ref=e390]:
+              - text: 新增支持带有卡在位状态周期性检测的NFC Tag读卡事件订阅能力。（
+              - link "API参考" [ref=e391] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-nfctag#tagon23
+              - text: ）
+          - generic [ref=e392]:
+            - heading "Graphics Accelerate Kit" [level=3] [ref=e393]
+            - paragraph [ref=e394]:
+              - text: 游戏渲染加速服务新增支持TV设备（
+              - link "指南" [ref=e395] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-accelerate-introduction#支持的设备
+              - text: ）。
+          - generic [ref=e396]:
+            - heading "Share Kit" [level=3] [ref=e397]
+            - paragraph [ref=e398]:
+              - text: 新增支持阅读分享功能，即选中文本进行分享时，分享面板同时显示图片分享和文本分享，用户可选择图片或文本进行分享。（
+              - link "API参考" [ref=e399] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/share-system-share#readingextendedsharerecorddata
+              - text: ）
+          - generic [ref=e400]:
+            - heading "Spatial Recon Kit" [level=3] [ref=e401]
+            - paragraph [ref=e402]:
+              - text: 3D空间重建场景下，新增支持空间重建会话管理、3DGS（3D Gaussian Splatting）场景建模、任务控制、进度查询以及三维模型文件导出功能。（
+              - link "API参考" [ref=e403] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-spatial-recon-interface-h
+              - text: ）
+          - generic [ref=e404]:
+            - heading "6.1.0(23) Beta1新增关键特性" [level=2] [ref=e405]
+            - paragraph [ref=e406]:
+              - text: 开发套件Beta (基于API 23) 新增如下关键特性，开发者可通过新增的API调用相应特性的能力。完整的API新增请参见
+              - link "API变更清单" [ref=e407] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/apidiff-610
+              - text: 。
+          - generic [ref=e408]:
+            - heading "Ability Kit" [level=3] [ref=e409]
+            - list [ref=e410]:
+              - listitem [ref=e411]:
+                - text: 应用程序包管理新增支持对Native软件包（hnp）进行独立签名的能力。可通过module.json5配置文件的hnpPackages标签进行标识。（
+                - link "指南" [ref=e412] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file#hnppackages标签
+                - text: ）
+              - listitem [ref=e413]:
+                - text: 在启动参数中提供UIAbility开始启动的时间戳（launchUTCTime和launchUptime），应用获取后可用于计算启动时间。（
+                - link "API参考" [ref=e414] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-app-ability-abilityconstant#launchparam
+                - text: ）
+          - generic [ref=e415]:
+            - heading "AppGallery Kit" [level=3] [ref=e416]
+            - paragraph [ref=e417]:
+              - text: 应用归因服务新增支持PC/2in1、TV设备。（
+              - link "指南" [ref=e418] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-attribution-introduction#约束与限制
+              - text: ）
+          - generic [ref=e419]:
+            - heading "App Linking Kit" [level=3] [ref=e420]
+            - list [ref=e421]:
+              - listitem [ref=e422]:
+                - text: 新增支持配置应用链接跳转的优先级。（
+                - link "指南" [ref=e423] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-linking-startupapp#建立域名与应用关联关系
+                - text: ）
+              - listitem [ref=e424]:
+                - text: 延迟链接新增支持PC/2in1设备。（
+                - link "指南" [ref=e425] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/applinking-deferredlink#约束与限制
+                - text: ）
+          - generic [ref=e426]:
+            - heading "AR Engine" [level=3] [ref=e427]
+            - list [ref=e428]:
+              - listitem [ref=e429]:
+                - text: 新增支持人脸识别与跟踪能力。（
+                - link "指南-ArkTS" [ref=e430] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-face
+                - text: 、
+                - link "指南-C/C++" [ref=e431] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-c-face
+                - text: ）
+              - listitem [ref=e432]:
+                - text: 新增支持人体骨骼关键点识别与跟踪能力。（
+                - link "指南-ArkTS" [ref=e433] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-body
+                - text: 、
+                - link "指南-C/C++" [ref=e434] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-c-body
+                - text: ）
+          - generic [ref=e435]:
+            - heading "ArkTS" [level=3] [ref=e436]
+            - paragraph [ref=e437]:
+              - text: util模块新增接口ArkTSVM.setMultithreadingDetectionEnabled，支持开启或关闭多线程检测能力。（
+              - link "API参考" [ref=e438] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-util#setmultithreadingdetectionenabled23
+              - text: ）
+          - generic [ref=e439]:
+            - heading "ArkUI" [level=3] [ref=e440]
+            - list [ref=e441]:
+              - listitem [ref=e442]:
+                - text: FrameNode提供查询节点是否在渲染树上的能力。（
+                - link "API参考" [ref=e443] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-arkui-framenode#isinrenderstate23
+                - text: ）
+              - listitem [ref=e444]:
+                - text: 普通文本输入框（
+                - link "API参考" [ref=e445] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-universal-attributes-text-style#deletebackward23
+                - text: ）及RichEditor（
+                - link "API参考" [ref=e446] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor#deletebackward23
+                - text: ）新增支持deleteBackward删除字符的能力。
+              - listitem [ref=e447]:
+                - text: 普通文本新增支持行首标点符号压缩。（
+                - link "API参考" [ref=e448] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#compressleadingpunctuation23
+                - text: ）
+              - listitem [ref=e449]:
+                - text: TextController新增支持文本选择能力。（
+                - link "API参考" [ref=e450] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#settextselection23
+                - text: ）
+              - listitem [ref=e451]:
+                - text: Text跑马灯新增参数spacing，支持配置跑马灯间距。（
+                - link "API参考" [ref=e452] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-text#textmarqueeoptions18对象说明
+                - text: ）
+              - listitem [ref=e453]:
+                - text: PersistenceV2的globalConnect新增支持集合类型（Array、Map、Set、Date、collections.Array、collections.Map、collections.Set）的持久化。（
+                - link "指南" [ref=e454] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-persistencev2
+                - text: ）
+              - listitem [ref=e455]:
+                - text: Navigation支持自定义双栏模式下分割线的颜色和间距。（
+                - link "API参考" [ref=e456] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-navigation#divider23
+                - text: ）
+              - listitem [ref=e457]:
+                - text: List组件或Grid组件下使用LazyForEach或带virtualScroll的Repeat时，新增支持不包含任何节点的空分支，空分支按大小为0的子节点处理。（
+                - link "List组件ArkTS API参考" [ref=e458] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-list#supportemptybranchinlazyloading23
+                - text: 、
+                - link "Grid组件ArkTS API参考" [ref=e459] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-container-grid#supportemptybranchinlazyloading23
+                - text: 、
+                - link "C API参考" [ref=e460] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-node-h#arkui_nodeattributetype
+                - text: "-ArkUI_NodeAttributeType新增属性NODE_LIST_SUPPORT_EMPTY_BRANCH_IN_LAZY_LOADING、NODE_GRID_SUPPORT_EMPTY_BRANCH_IN_LAZY_LOADING）"
+              - listitem [ref=e461]:
+                - text: RichEditor新增支持单行模式。（
+                - link "API参考" [ref=e462] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-richeditor#singleline23
+                - text: ）
+          - generic [ref=e463]:
+            - heading "ArkWeb" [level=3] [ref=e464]
+            - list [ref=e465]:
+              - listitem [ref=e466]:
+                - text: 新增支持Web应用模拟点击检测。（
+                - link "指南" [ref=e467] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-detect-simulated-click-risk-enhanced
+                - text: ）
+              - listitem [ref=e468]:
+                - text: 新增支持禁用AI识图能力。（
+                - link "API参考" [ref=e469] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-attributes#enableimageanalyzer23
+                - text: ）
+              - listitem [ref=e470]:
+                - text: 新增支持获取ConsoleMessage的日志来源。（
+                - link "API参考" [ref=e471] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-consolemessage#getsource23
+                - text: ）
+              - listitem [ref=e472]:
+                - text: 新增支持Web首屏渲染时间统计的能力，用于衡量首屏网页加载渲染性能。（
+                - link "API参考" [ref=e473] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-basic-components-web-events#onfirstscreenpaint23
+                - text: ）
+              - listitem [ref=e474]:
+                - text: 新增支持获取所有存储的Cookies和Cookies的属性。（
+                - link "API参考" [ref=e475] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webcookiemanager#fetchallcookies23
+                - text: ）
+              - listitem [ref=e476]:
+                - text: 新增白屏插帧接口，提供插帧信息回调和设置失效时间的能力。（
+                - link "API参考" [ref=e477] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-webview-webviewcontroller#setblanklessloadingwithparams23
+                - text: ）
+          - generic [ref=e478]:
+            - heading "Audio Kit" [level=3] [ref=e479]
+            - list [ref=e480]:
+              - listitem [ref=e481]:
+                - text: 新增C API，支持变声效果节点变声类型设置和设置结果查询。（
+                - link "API参考" [ref=e482] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-native-audio-suite-engine-h#oh_audiosuiteengine_setspacerenderpositionparams
+                - text: ）
+              - listitem [ref=e483]:
+                - text: 系统音量变化回调中新增“上一音量值”字段，用于获取音量变化前的音量值。（
+                - link "API参考" [ref=e484] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-i#streamvolumeevent20
+                - text: ）
+              - listitem [ref=e485]:
+                - text: 新增系统音效管理和播放的API，提供管理系统声音的基础能力，包括对系统音效类型的定义、获取系统音效播放器等。（
+                - link "指南" [ref=e486] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-soundplayer-for-playback
+                - text: 、
+                - link "API参考" [ref=e487] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-systemsoundmanager
+                - text: ）
+              - listitem [ref=e488]:
+                - text: 新增支持获取当前音频路由的预估时延。（
+                - link "API参考" [ref=e489] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-audio-audiorenderer#getlatency23
+                - text: ）
+          - generic [ref=e490]:
+            - heading "AVCodec Kit" [level=3] [ref=e491]
+            - paragraph [ref=e492]:
+              - text: AVCodec新增支持AV1/VP9/VP8/RV30/RV40/WVC1/DVVIDEO/RAWVIDEO/MPEG1格式的视频软解码能力。（
+              - link "指南" [ref=e493] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avcodec-support-formats#媒体编解码
+              - text: ）
+          - generic [ref=e494]:
+            - heading "Basic Service Kit" [level=3] [ref=e495]
+            - paragraph [ref=e496]:
+              - text: 上传下载的预下载模块新增支持获取对端IP地址。（
+              - link "API参考" [ref=e497] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-request-cachedownload#networkinfo20
+              - text: ）
+          - generic [ref=e498]:
+            - heading "Call Service Kit" [level=3] [ref=e499]
+            - list [ref=e500]:
+              - listitem [ref=e501]:
+                - text: 新增支持查询应用是否有企业来电显示权限以及获取陌生号码与信息识别开关状态、应用号码识别开关状态。（
+                - link "API参考" [ref=e502] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/callservicekit-numberldentify
+                - text: ）
+              - listitem [ref=e503]:
+                - text: 新增支持跳转陌生号码和信息识别设置页面能力。（
+                - link "指南" [ref=e504] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/callservice-enterprise-app-redirection
+                - text: ）
+          - generic [ref=e505]:
+            - heading "Camera Kit" [level=3] [ref=e506]
+            - list [ref=e507]:
+              - listitem [ref=e508]:
+                - text: 新增支持获取全质量图和未压缩图的对象。（
+                - link "API参考" [ref=e509] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-photooutput#oncapturephotoavailable23
+                - text: ）
+              - listitem [ref=e510]:
+                - text: 新增支持HDR动态照片拍摄能力，即组成动态照片的静态图片与动态短视频均为高动态范围（HDR）内容。（
+                - link "指南" [ref=e511] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-moving-photo#hdr动态照片
+                - text: ）
+              - listitem [ref=e512]:
+                - text: 新增addMetadataObjectTypes、removeMetadataObjectTypes，用于针对检测类型进行实时增删。（
+                - link "API参考" [ref=e513] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-camera-metadataoutput#addmetadataobjecttypes23
+                - text: ）
+              - listitem [ref=e514]:
+                - text: 新增C API，支持使用元数据对象类型数组创建元数据输出实例。（
+                - link "API参考" [ref=e515] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-camera-manager-h#oh_cameramanager_createmetadataoutputwithobjecttypes
+                - text: ）
+          - generic [ref=e516]:
+            - heading "Cloud Foundation Kit" [level=3] [ref=e517]
+            - list [ref=e518]:
+              - listitem [ref=e519]:
+                - text: 新增支持PC/2in1设备。（
+                - link "指南" [ref=e520] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundation-introduction#支持的设备
+                - text: ）
+              - listitem [ref=e521]:
+                - text: 预加载模块新增支持跳链安装预加载类型。（
+                - link "指南" [ref=e522] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundation-prefetch-overview
+                - text: 、
+                - link "API参考" [ref=e523] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/cloudfoundation-cloudresprefetch#prefetchmode
+                - text: ）
+          - generic [ref=e524]:
+            - heading "Connectivity Kit" [level=3] [ref=e525]
+            - paragraph [ref=e526]:
+              - text: BLE广播报文数据AdvertiseData新增advertiseName，支持应用自定义BLE广播名称。（
+              - link "API参考" [ref=e527] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-bluetooth-ble#advertisedata
+              - text: ）
+            - paragraph [ref=e528]:
+              - text: Wi-Fi的P2P连接方式新增支持通过指定群组频率创建群组的能力。（
+              - link "API参考" [ref=e529] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-wifimanager#wifip2pconfig
+              - text: ）
+          - generic [ref=e530]:
+            - heading "Crypto Architecture Kit" [level=3] [ref=e531]
+            - paragraph [ref=e532]:
+              - text: 新增支持通过私钥对象获取公钥对象的能力。（
+              - link "API参考" [ref=e533] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-cryptoframework#getpubkey23
+              - text: ）
+          - generic [ref=e534]:
+            - heading "Enterprise Space Kit" [level=3] [ref=e535]
+            - paragraph [ref=e536]:
+              - text: 空间管理场景下，新增支持企业账号认证、获取企业应用访问令牌、设置工作空间状态栏图标、设置工作空间本地名称功能。（
+              - link "指南" [ref=e537] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/enterprisespace-spacemanager-guide
+              - text: ）
+          - generic [ref=e538]:
+            - heading "Form Kit" [level=3] [ref=e539]
+            - paragraph [ref=e540]:
+              - text: ArkTS卡片开发支持V2装饰器语法。（
+              - link "指南" [ref=e541] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-adapt-faq
+              - text: ）
+          - generic [ref=e542]:
+            - heading "Game Service Kit" [level=3] [ref=e543]
+            - paragraph [ref=e544]:
+              - text: 游戏近场快传新增支持安装包传输。（
+              - link "指南" [ref=e545] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-nearbytransfer-installation-package
+              - text: 、
+              - link "API参考" [ref=e546] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservice-nearbytransfer#gamenearbytransferonremoteinstallationinfonotify
+              - text: ）
+          - generic [ref=e547]:
+            - heading "Graphics Accelerate Kit" [level=3] [ref=e548]
+            - list [ref=e549]:
+              - listitem [ref=e550]:
+                - text: 游戏资源加速服务AppDownloadProgress接口新增支持设置资源类型。（
+                - link "API参考" [ref=e551] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/graphics-accelerate-assetdownloadmanager#appdownloadprogress
+                - text: ）
+              - listitem [ref=e552]:
+                - text: 游戏启动加速服务新增支持PC/2in1设备。（
+                - link "指南" [ref=e553] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-accelerate-introduction#支持的设备
+                - text: ）
+          - generic [ref=e554]:
+            - heading "IAP Kit" [level=3] [ref=e555]
+            - list [ref=e556]:
+              - listitem [ref=e557]:
+                - text: 新增开票接口，实现在用户在购买数字商品场景下，申请开发票。（
+                - link "指南" [ref=e558] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-after-sales
+                - text: 、
+                - link "API参考" [ref=e559] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-iap#iapshowmanagedinvoices
+                - text: ）
+              - listitem [ref=e560]:
+                - text: 新增ArkTS嵌入式收银台组件，支持TV设备上的嵌入式收银台。（
+                - link "API参考" [ref=e561] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-arkts-component
+                - text: ）
+          - generic [ref=e562]:
+            - heading "Image Kit" [level=3] [ref=e563]
+            - list [ref=e564]:
+              - listitem [ref=e565]:
+                - text: 新增支持读取和批量修改图像源的元数据的能力。（
+                - link "API参考" [ref=e566] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-imagesource#readimagemetadata23
+                - text: ）
+              - listitem [ref=e567]:
+                - text: PixelMap新增自动处理旋转角的能力。（
+                - link "ArkTS API参考" [ref=e568] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-image-f#imagecreatepixelmapfromsurfacewithtransformation23
+                - text: 、
+                - link "C API参考" [ref=e569] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-pixelmap-native-h#oh_pixelmapnative_createpixelmapfromsurfacewithtransformation
+                - text: ）
+          - generic [ref=e570]:
+            - heading "Live View Kit" [level=3] [ref=e571]
+            - paragraph [ref=e572]:
+              - text: 新增支持基于地理位置的实况窗提醒。（
+              - link "API参考" [ref=e573] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/liveview-liveviewmanager#liveviewmanagerstartliveviewbytrigger
+              - text: ）
+          - generic [ref=e574]:
+            - heading "Map Kit" [level=3] [ref=e575]
+            - list [ref=e576]:
+              - listitem [ref=e577]:
+                - text: 新增3D地图城市灯光效果。（
+                - link "指南" [ref=e578] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-presenting#开启3d地球
+                - text: 、
+                - link "API参考" [ref=e579] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-mapcomponentcontroller#setsphereenabled-2
+                - text: ）
+              - listitem [ref=e580]:
+                - text: 新增支持在地图左下角设置审图号。（
+                - link "指南" [ref=e581] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-controls-and-interaction#审图号
+                - text: 、
+                - link "API参考" [ref=e582] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-mapcomponentcontroller#setapprovenumberenabled
+                - text: ）
+              - listitem [ref=e583]:
+                - text: 新增支持设置Marker碰撞优先级以及Marker最大、最小层级。（
+                - link "API参考" [ref=e584] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-common#markeroptions
+                - text: ）
+          - generic [ref=e585]:
+            - heading "NearLink Kit" [level=3] [ref=e586]
+            - paragraph [ref=e587]:
+              - text: 新增查询当前设备是否支持NearLink Kit的能力。（
+              - link "指南" [ref=e588] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-issupported
+              - text: 、
+              - link "API参考" [ref=e589] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-manager#isnearlinksupported
+              - text: ）
+          - generic [ref=e590]:
+            - heading "MDM Kit" [level=3] [ref=e591]
+            - list [ref=e592]:
+              - listitem [ref=e593]:
+                - text: 新增支持根据给定的bundleInfoGetFlag获取设备指定用户下已安装应用列表。（
+                - link "API参考" [ref=e594] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-bundlemanager#bundlemanagergetinstalledbundlelist23
+                - text: ）
+              - listitem [ref=e595]:
+                - text: 应用管理模块新增支持设置UIAbility组件禁用策略。（
+                - link "API参考" [ref=e596] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-enterprise-applicationmanager#applicationmanagersetabilitydisabled23
+                - text: ）
+              - listitem [ref=e597]:
+                - text: MDM应用支持在后台访问context和启动应用的功能。（
+                - link "API参考" [ref=e598] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-application-enterpriseadminextensioncontext
+                - text: ）
+          - generic [ref=e599]:
+            - heading "Media Kit" [level=3] [ref=e600]
+            - list [ref=e601]:
+              - listitem [ref=e602]:
+                - text: 新增支持批量提取视频缩略图的能力，通过传入一个时间戳数组，可获取时间戳对应视频帧的缩略图。（
+                - link "指南" [ref=e603] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avmetadataextractor
+                - text: "-详见步骤7、"
+                - link "API参考" [ref=e604] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-avmetadataextractor#fetchframesbytimes23
+                - text: ）
+              - listitem [ref=e605]:
+                - text: 支持将HDR VIVID/HLG/HDR10视频转换为SDR视频，以及SDR视频的转码。（
+                - link "指南" [ref=e606] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/media-kit-intro#支持的格式-4
+                - text: ）
+          - generic [ref=e607]:
+            - heading "Media Library Kit" [level=3] [ref=e608]
+            - paragraph [ref=e609]:
+              - text: 新增支持获取媒体库相册的虚拟路径。（
+              - link "API参考" [ref=e610] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-photoaccesshelper-e#albumkeys
+              - text: ）
+          - generic [ref=e611]:
+            - heading "Network Kit" [level=3] [ref=e612]
+            - list [ref=e613]:
+              - listitem [ref=e614]:
+                - text: HTTP请求新增多个可选配置信息（
+                - link "API参考" [ref=e615] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-http#httprequestoptions
+                - text: ）：
+                - list [ref=e616]:
+                  - listitem [ref=e617]: 新增配置参数customMethod支持自定义请求方法；
+                  - listitem [ref=e618]: 新增配置参数maxRedirects支持针对HttpRequest指定最大跳转次数；
+                  - listitem [ref=e619]: 新增配置参数sniHostName支持客户端通过配置SNI（Server Name Indication，服务器名称指示）在TLS握手阶段向服务器声明目标域名；
+                  - listitem [ref=e620]: 新增配置参数pathPreference支持HTTP请求指定特定激活的网络。
+              - listitem [ref=e621]:
+                - text: 新增接口支持VPN类应用获取数据包对应的UID。（
+                - link "API参考" [ref=e622] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-net-connection#connectiongetconnectowneruid23
+                - text: ）
+              - listitem [ref=e623]:
+                - text: DNS解析能力支持转码，可将Unicode编码形式的主机名转换为ASCII编码形式（
+                - link "API参考" [ref=e624] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-net-connection#connectiongetdnsascii23
+                - text: ），也可将ASCII编码形式的主机名转换为Unicode编码形式（
+                - link "API参考" [ref=e625] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-net-connection#connectiongetdnsunicode23
+                - text: ）。（
+                - link "指南" [ref=e626] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/net-dns
+                - text: ）
+          - generic [ref=e627]:
+            - heading "Notification Kit" [level=3] [ref=e628]
+            - list [ref=e629]:
+              - listitem [ref=e630]:
+                - text: NotificationRequest中新增多个属性（
+                - link "API参考" [ref=e631] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-notification-notificationrequest#notificationrequest-1
+                - text: ）：
+                - list [ref=e632]:
+                  - listitem [ref=e633]: 新增属性priorityNotificationType，支持设置通知优先显示。
+                  - listitem [ref=e634]: 新增属性overlayIcon，支持设置重叠图标。
+              - listitem [ref=e635]:
+                - text: NotificationFlags新增属性，支持应用调整通知是否在横幅和锁屏界面显示。（
+                - link "API参考" [ref=e636] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-notification-notificationflags#notificationflags-1
+                - text: ）
+          - generic [ref=e637]:
+            - heading "Payment Kit" [level=3] [ref=e638]
+            - paragraph [ref=e639]:
+              - text: 新增营销组件，开发者可在应用内实现领券、选券能力。（
+              - link "指南" [ref=e640] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-promotion-service
+              - text: 、
+              - link "API参考" [ref=e641] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-promotionservice
+              - text: ）
+          - generic [ref=e642]:
+            - heading "PDF Kit" [level=3] [ref=e643]
+            - list [ref=e644]:
+              - listitem [ref=e645]:
+                - text: 新增支持自定义页面视图的缩放范围。（
+                - link "API参考" [ref=e646] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pdf-arkts-pdfviewmanage#setmaxzoom
+                - text: ）
+              - listitem [ref=e647]:
+                - text: 新增支持在PDF页面获取页面文本信息。（
+                - link "API参考" [ref=e648] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pdf-arkts-pdfservice#gettextcontent
+                - text: ）
+          - generic [ref=e649]:
+            - heading "Pen Kit" [level=3] [ref=e650]
+            - paragraph [ref=e651]:
+              - text: 新增禁用画布缩放能力、设置滚动位置ScrollTo及监听长画布滚动位置能力、自定义长画布最大高度能力。（
+              - link "指南" [ref=e652] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pen-suite
+              - text: 、
+              - link "API参考" [ref=e653] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pen-handwritecomponent#handwritecomponent
+              - text: ）
+          - generic [ref=e654]:
+            - heading "Performance Analysis Kit" [level=3] [ref=e655]
+            - paragraph [ref=e656]:
+              - text: HiappEvent新增ArkWeb抛滑触控操作丢帧检测能力。（
+              - link "指南" [ref=e657] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-watcher-web-fling-jank-events
+              - text: ）
+            - paragraph [ref=e658]:
+              - text: HiDebug新增提供添加维测信息的接口，开发者可根据业务需要将维测信息添加到崩溃日志中，若程序发生崩溃，可在崩溃日志中找到该维测信息。（
+              - link "指南" [ref=e659] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hidebug-guidelines#添加维测信息到崩溃日志中
+              - text: 、
+              - link "API参考" [ref=e660] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hidebug-h#oh_hidebug_setcrashobj
+              - text: ）
+            - paragraph [ref=e661]:
+              - text: AppFreeze日志中调用栈的堆栈信息增加线程状态信息。（
+              - link "指南" [ref=e662] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appfreeze-guidelines#堆栈信息
+              - text: ）
+          - generic [ref=e663]:
+            - heading "Preview Kit" [level=3] [ref=e664]
+            - paragraph [ref=e665]:
+              - text: 新增C API，支持通用文件缓存加速功能，即通过缓存解码后的图片、视频等数据至磁盘，实现后续文件打开或浏览时的直接读取，减少重复解码耗时，提升用户操作流畅度。（
+              - link "指南" [ref=e666] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/preview-filecacheboost
+              - text: ）
+          - generic [ref=e667]:
+            - heading "Remote Communication Kit" [level=3] [ref=e668]
+            - list [ref=e669]:
+              - listitem [ref=e670]:
+                - text: 新增Response.toJSON接口，支持BigInt模式。（
+                - link "API参考" [ref=e671] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-communication-rcp#tojson-1
+                - text: ）
+              - listitem [ref=e672]:
+                - text: 在网络请求的场景下，新增支持通过OnAuthenticationChallenge接口，实现认证挑战。（
+                - link "API参考" [ref=e673] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-communication-rcp#onauthenticationchallenge
+                - text: ）
+              - listitem [ref=e674]:
+                - text: 在网络请求的场景下，新增支持获取本次请求的重定向次数。（
+                - link "API参考" [ref=e675] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-communication-rcp#debugevent
+                - text: ）
+              - listitem [ref=e676]:
+                - text: 在网络请求的场景下，新增支持通过ConnectionReusePolicy接口，设置HTTP管道复用策略。（
+                - link "API参考" [ref=e677] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-communication-rcp#connectionreusepolicy
+                - text: ）
+              - listitem [ref=e678]:
+                - text: 新增支持应用通过network_config.json文件，配置HTTP明文请求禁用策略。（
+                - link "指南" [ref=e679] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-communication-preparations#http明文设置
+                - text: ）
+              - listitem [ref=e680]:
+                - text: 新增默认的通信会话，支持在不需要定制Session的配置场景下，便捷地发起网络请求。（
+                - link "API参考" [ref=e681] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-communication-rcp#defaultsession
+                - text: ）
+              - listitem [ref=e682]:
+                - text: 在网络请求的场景下，新增支持通过CookieRepository管理cookie。（
+                - link "API参考" [ref=e683] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-communication-rcp#cookierepository
+                - text: ）
+          - generic [ref=e684]:
+            - heading "Scan Kit" [level=3] [ref=e685]
+            - paragraph [ref=e686]:
+              - text: 默认界面扫码能力、图像识码能力和自定义界面扫码能力支持带后置相机的Wearable。（
+              - link "指南" [ref=e687] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-introduction#支持的设备
+              - text: ）
+          - generic [ref=e688]:
+            - heading "Telephony Kit" [level=3] [ref=e689]
+            - paragraph [ref=e690]:
+              - text: 新增VCard模块，提供电子名片的文件格式标准，支持将VCard文件导入联系人数据库和将联系人数据导出为VCard文件等。（
+              - link "API参考" [ref=e691] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-vcard
+              - text: ）
+          - generic [ref=e692]:
+            - heading "UI Design Kit" [level=3] [ref=e693]
+            - list [ref=e694]:
+              - listitem [ref=e695]:
+                - text: 新增底部页签悬浮样式以及迷你栏，支持迷你栏动态折叠展开。（
+                - link "指南" [ref=e696] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-hds-tabs-bar-floating
+                - text: 、
+                - link "API参考" [ref=e697] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdstabs#hdstabsfloatingstyle
+                - text: ）
+              - listitem [ref=e698]:
+                - text: 导航组件新增支持设置双栏模式下的分割线和右侧页面显示默认占位页。（
+                - link "API参考-双栏分割线" [ref=e699] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdsnavigation#divider
+                - text: 、
+                - link "API参考-双栏默认占位页" [ref=e700] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdsnavigation#splitplaceholder
+                - text: ）
+              - listitem [ref=e701]:
+                - text: 导航组件新增支持设置标题字号、局部页面自定义主题等能力。（
+                - link "API参考-标题字号" [ref=e702] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdsnavigation#titlesize
+                - text: 、
+                - link "API参考-局部自定义" [ref=e703] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdsnavdestination#withtheme
+                - text: ）
+              - listitem [ref=e704]:
+                - text: 底部页签和导航组件新增支持沉浸式材质效果。（
+                - link "API参考-底部页签材质参数" [ref=e705] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdstabs#systemmaterialparams
+                - text: 、
+                - link "API参考-导航组件材质参数" [ref=e706] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdsnavigation#systemmaterialparams
+                - text: ）
+              - listitem [ref=e707]:
+                - text: 列表卡片新增支持无障碍相关能力，包括无障碍分组、聚合播报等。（
+                - link "API参考" [ref=e708] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdslistitemcard#accessibilitygroupoptions
+                - text: ）
+              - listitem [ref=e709]:
+                - text: 新增支持设置列表的预览菜单样式、横滑删除触发类型以及拦截无障碍事件等能力。（
+                - link "API参考" [ref=e710] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdslistitem#menustyle
+                - text: ）
+              - listitem [ref=e711]:
+                - text: 侧边栏新增支持通过横滑手势打开/关闭侧边栏。（
+                - link "API参考" [ref=e712] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdssidebar#接口
+                - text: ）
+              - listitem [ref=e713]:
+                - text: 操作栏新增支持设置操作栏上下边距。（
+                - link "API参考" [ref=e714] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdsactionbar#actionbarstyle
+                - text: ）
+              - listitem [ref=e715]:
+                - text: 即时消息栏新增支持高度随组件文本内容自适应变化。（
+                - link "API参考" [ref=e716] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdssnackbar#snackbarstyleoptions
+                - text: ）
+              - listitem [ref=e717]:
+                - text: 新增材质模块，支持设置材质类型和等级，实现组件的沉浸式材质效果。（
+                - link "API参考" [ref=e718] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design-hdsmaterial
+                - text: ）
+          - generic [ref=e719]:
+            - heading "Universal Keystore Kit" [level=3] [ref=e720]
+            - paragraph [ref=e721]:
+              - text: HUKS新增支持群组密钥功能，针对同一开发者开发的多个HAP应用提供跨应用密钥共享能力。（
+              - link "指南" [ref=e722] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-group-key-overview
+              - text: ）
+          - generic [ref=e723]:
+            - heading "Weather Service Kit" [level=3] [ref=e724]
+            - list [ref=e725]:
+              - listitem [ref=e726]:
+                - text: 新增支持根据精确位置查询天气信息。（
+                - link "API参考" [ref=e727] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/weather-service-weatherservice#weatherrequest
+                - text: ）
+              - listitem [ref=e728]:
+                - text: 新增支持根据位置信息，查询对应位置地点名称。（
+                - link "API参考" [ref=e729] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/weather-service-weatherservice#city
+                - text: ）
+              - listitem [ref=e730]:
+                - text: 新增支持TV设备。（
+                - link "指南" [ref=e731] [cursor=pointer]:
+                  - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/weather-service-introduction#约束与限制
+                - text: ）
+          - generic [ref=e732]:
+            - heading "调测调优" [level=3] [ref=e733]
+            - paragraph [ref=e734]:
+              - text: 打包工具打包hap/hsp时，支持传入已存在的hap/hsp（--exist-src-path）和指定要保留的目录（--lib-path-retain），要保留的目录会从已存在的hap/hsp中直接拷贝到目标包，不会从源文件中重新压缩打包。当前保留目录只支持--lib-path。（
+              - link "指南" [ref=e735] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/packing-tool
+              - text: ）
+        - generic [ref=e739]:
+          - generic [ref=e740]: 意见反馈
+          - generic [ref=e741]:
+            - generic [ref=e742]:
+              - generic [ref=e743]: 以上内容对您是否有帮助？
+              - generic [ref=e744]:
+                - generic [ref=e745] [cursor=pointer]:
+                  - generic:
+                    - img
+                - generic [ref=e747] [cursor=pointer]:
+                  - generic:
+                    - img
+            - generic [ref=e748]: 意见反馈
+          - generic [ref=e749]:
+            - generic [ref=e750]: 如果您有其他疑问，您也可以通过开发者社区问答频道来和我们联系探讨。
+            - generic [ref=e751]:
+              - link "社区提问" [ref=e752] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/forum/
+              - link "智能客服提问" [ref=e753] [cursor=pointer]:
+                - /url: https://developer.huawei.com/consumer/cn/customerService/#/bot-dev-top/faq-top/faq-talk-top
+      - generic [ref=e755]:
+        - generic [ref=e756]:
+          - generic [ref=e758] [cursor=pointer]:
+            - generic [ref=e759]:
+              - textbox [ref=e761]
+              - generic "简体中文" [ref=e762]
+            - img [ref=e764]
+          - list [ref=e767]:
+            - listitem [ref=e768]:
+              - img [ref=e770] [cursor=pointer]
+            - listitem [ref=e771]:
+              - img [ref=e773] [cursor=pointer]
+            - listitem [ref=e774]:
+              - img [ref=e776] [cursor=pointer]
+            - listitem [ref=e777]:
+              - img [ref=e779] [cursor=pointer]
+            - listitem [ref=e780]:
+              - img [ref=e782] [cursor=pointer]
+            - listitem [ref=e783]:
+              - img [ref=e785] [cursor=pointer]
+        - generic [ref=e786]:
+          - generic [ref=e788]: 华为开发者联盟 版权所有 ©2026
+          - generic [ref=e789]:
+            - link "使用条款" [ref=e791] [cursor=pointer]:
+              - /url: /consumer/cn/devservice/use
+            - generic [ref=e792]:
+              - text: "|"
+              - link "华为开发者联盟用户协议" [ref=e793] [cursor=pointer]:
+                - /url: /consumer/cn/doc/start/useragreement-0000001494912825
+            - generic [ref=e794]:
+              - text: "|"
+              - link "关于华为开发者联盟与隐私的声明" [ref=e795] [cursor=pointer]:
+                - /url: /consumer/cn/devservice/term
+            - generic [ref=e796]:
+              - text: "|"
+              - link "cookies" [ref=e797] [cursor=pointer]:
+                - /url: https://consumer.huawei.com/cn/legal/cookie-policy/
+            - generic [ref=e798]:
+              - text: "|"
+              - link "开源软件声明" [ref=e799] [cursor=pointer]:
+                - /url: /consumer/cn/opensource/

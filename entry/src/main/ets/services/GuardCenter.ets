@@ -1,27 +1,36 @@
-import { BlePowerState, GuardConfig, GuardRunState, GuardSettings, GuardSnapshot } from '../model/GuardModels';
+import { pasteboard } from '@kit.BasicServicesKit';
+import { BlePowerState, GuardConfig, GuardDiagnostics, GuardDiagnosticSeverity, GuardRunState, GuardSettings, GuardSnapshot } from '../model/GuardModels';
 import { LogStore } from '../common/LogStore';
 import { BackgroundTaskService } from './BackgroundTaskService';
 import { BleAdvertiser } from './BleAdvertiser';
+import { GuardDiagnosticsService } from './GuardDiagnosticsService';
+import { GuardWidgetStore } from './GuardWidgetStore';
+import { getLastLaunchParam } from './LaunchDiagnosticsStore';
 import { PermissionService } from './PermissionService';
 import { SettingsStore } from './SettingsStore';
 
 type GuardListener = (snapshot: GuardSnapshot) => void;
+const MANUFACTURER_ID_TEXT: string = '0x0B1E';
 
 export class GuardCenter {
   private config: GuardConfig;
   private settingsStore: SettingsStore;
   private permissionService: PermissionService;
   private backgroundTaskService: BackgroundTaskService;
+  private diagnosticsService: GuardDiagnosticsService = new GuardDiagnosticsService();
+  private widgetStore: GuardWidgetStore;
   private advertiser: BleAdvertiser = new BleAdvertiser();
   private logStore: LogStore = new LogStore();
   private snapshot: GuardSnapshot = new GuardSnapshot();
   private listeners: Array<GuardListener> = [];
+  private widgetSnapshotQueue: Promise<void> = Promise.resolve();
 
   constructor(config: GuardConfig) {
     this.config = config;
     this.settingsStore = new SettingsStore(config.context);
     this.permissionService = new PermissionService(config.context);
     this.backgroundTaskService = new BackgroundTaskService(config.context, config.bundleName, config.abilityName);
+    this.widgetStore = new GuardWidgetStore(config.context);
     this.advertiser.setStatusListener((advertising: boolean) => {
       this.snapshot.advertising = advertising;
       this.syncRunState();
@@ -32,6 +41,20 @@ export class GuardCenter {
       this.syncRunState();
       this.publish(running ? '后台长时任务已恢复' : '后台长时任务已停止');
     });
+    this.backgroundTaskService.setEventListener((message: string, critical: boolean) => {
+      this.diagnosticsService.recordBackgroundEvent(message, critical);
+    });
+    this.diagnosticsService.setListener((diagnostics: GuardDiagnostics, message: string) => {
+      this.snapshot.diagnostics = diagnostics;
+      if (diagnostics.severity === GuardDiagnosticSeverity.CRITICAL) {
+        this.logStore.error(message);
+      } else if (diagnostics.severity === GuardDiagnosticSeverity.WARNING) {
+        this.logStore.warn(message);
+      } else {
+        this.logStore.info(message);
+      }
+      this.publish(message);
+    });
   }
 
   subscribe(listener: GuardListener): void {
@@ -39,13 +62,17 @@ export class GuardCenter {
     listener(this.cloneSnapshot());
   }
 
-  async initialize(): Promise<void> {
+  async initialize(restoreEnabledGuard: boolean = true): Promise<void> {
     const settings: GuardSettings = await this.settingsStore.load();
+    this.snapshot.guardEnabled = settings.enabled;
     this.snapshot.deviceId = settings.deviceId;
+    this.diagnosticsService.applyLaunchParam(getLastLaunchParam());
+    this.diagnosticsService.startSystemEventWatch();
     await this.refreshStatus();
+    this.logStartupDiagnostics();
     this.logStore.info('加载守护配置完成');
     this.publish('初始化完成');
-    if (settings.enabled) {
+    if (restoreEnabledGuard && settings.enabled) {
       await this.startGuard();
     }
   }
@@ -127,11 +154,30 @@ export class GuardCenter {
     this.publish('状态已刷新');
   }
 
+  async copyPairingConfig(): Promise<void> {
+    const configText: string = this.buildPairingConfigText();
+    try {
+      const systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+      await systemPasteboard.setData(pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, configText));
+      this.logStore.info('Mac 端匹配配置已复制');
+      this.publish('匹配配置已复制，可粘贴到 Mac 端工具');
+    } catch (err) {
+      this.logStore.error(`复制匹配配置失败：${this.formatError(err)}`);
+      this.publish('复制匹配配置失败');
+    }
+  }
+
   private async refreshStatus(): Promise<void> {
     this.refreshBluetoothState();
     this.snapshot.permissionGranted = this.permissionService.hasAll();
     this.snapshot.advertising = this.advertiser.isAdvertising();
     this.snapshot.backgroundRunning = await this.backgroundTaskService.refresh();
+    if (this.snapshot.advertising !== this.snapshot.backgroundRunning) {
+      this.diagnosticsService.recordGuardResidue(this.snapshot.advertising, this.snapshot.backgroundRunning);
+    } else {
+      this.diagnosticsService.recordClearRuntimeResidue();
+    }
+    this.snapshot.diagnostics = this.diagnosticsService.snapshot();
     this.syncRunState();
   }
 
@@ -153,10 +199,19 @@ export class GuardCenter {
     settings.enabled = enabled;
     settings.deviceId = this.snapshot.deviceId;
     await this.settingsStore.save(settings);
+    this.snapshot.guardEnabled = enabled;
   }
 
   private refreshBluetoothState(): void {
     this.snapshot.blePowerState = this.advertiser.isBluetoothOn() ? BlePowerState.ON : BlePowerState.OFF;
+  }
+
+  private logStartupDiagnostics(): void {
+    const diagnostics: GuardDiagnostics = this.diagnosticsService.snapshot();
+    if (diagnostics.summary === '暂无系统异常记录') {
+      return;
+    }
+    this.logStore.warn(diagnostics.summary);
   }
 
   private buildPermissionMessage(): string {
@@ -165,6 +220,10 @@ export class GuardCenter {
       return `缺少权限：${missingPermissionText}，请在系统设置中允许后台位置`;
     }
     return `缺少权限：${missingPermissionText}`;
+  }
+
+  private buildPairingConfigText(): string {
+    return `HoBle Pairing Config\nmanufacturerId=${MANUFACTURER_ID_TEXT}\ndeviceId=${this.snapshot.deviceId}\nmatchRule=manufacturerId + manufacturerValue(deviceId)`;
   }
 
   private formatError(err: Object): string {
@@ -178,6 +237,7 @@ export class GuardCenter {
     this.snapshot.lastMessage = message;
     this.snapshot.logs = this.logStore.getLogs();
     const current: GuardSnapshot = this.cloneSnapshot();
+    this.persistWidgetSnapshot(current);
     for (let index: number = 0; index < this.listeners.length; index++) {
       this.listeners[index](current);
     }
@@ -185,6 +245,7 @@ export class GuardCenter {
 
   private cloneSnapshot(): GuardSnapshot {
     const result: GuardSnapshot = new GuardSnapshot();
+    result.guardEnabled = this.snapshot.guardEnabled;
     result.blePowerState = this.snapshot.blePowerState;
     result.permissionGranted = this.snapshot.permissionGranted;
     result.advertising = this.snapshot.advertising;
@@ -192,7 +253,29 @@ export class GuardCenter {
     result.runState = this.snapshot.runState;
     result.deviceId = this.snapshot.deviceId;
     result.lastMessage = this.snapshot.lastMessage;
+    result.diagnostics = this.cloneDiagnostics(this.snapshot.diagnostics);
     result.logs = this.snapshot.logs.slice();
+    return result;
+  }
+
+  private persistWidgetSnapshot(snapshot: GuardSnapshot): void {
+    this.widgetSnapshotQueue = this.widgetSnapshotQueue.then(() => {
+      return this.widgetStore.saveSnapshot(snapshot);
+    }).catch((err: Object) => {
+      this.logStore.warn(`桌面组件状态同步失败：${this.formatError(err)}`);
+    });
+  }
+
+  private cloneDiagnostics(diagnostics: GuardDiagnostics): GuardDiagnostics {
+    const result: GuardDiagnostics = new GuardDiagnostics();
+    result.summary = diagnostics.summary;
+    result.lastExitReason = diagnostics.lastExitReason;
+    result.lastExitMessage = diagnostics.lastExitMessage;
+    result.systemKillCount = diagnostics.systemKillCount;
+    result.lastSystemEvent = diagnostics.lastSystemEvent;
+    result.backgroundEventCount = diagnostics.backgroundEventCount;
+    result.lastBackgroundEvent = diagnostics.lastBackgroundEvent;
+    result.severity = diagnostics.severity;
     return result;
   }
 }

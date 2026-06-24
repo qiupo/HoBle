@@ -37,6 +37,42 @@
       "value": "#233348"
     },
     {
+      "name": "guard_success",
+      "value": "#39D98A"
+    },
+    {
+      "name": "guard_success_background",
+      "value": "#173225"
+    },
+    {
+      "name": "guard_widget_status_success_background",
+      "value": "#173A28"
+    },
+    {
+      "name": "guard_widget_status_success_border",
+      "value": "#2E8C59"
+    },
+    {
+      "name": "guard_filter_active_text",
+      "value": "#0B1220"
+    },
+    {
+      "name": "guard_diagnostic_critical",
+      "value": "#FFB4AB"
+    },
+    {
+      "name": "guard_diagnostic_critical_background",
+      "value": "#4A1712"
+    },
+    {
+      "name": "guard_widget_status_error_background",
+      "value": "#4A1712"
+    },
+    {
+      "name": "guard_widget_status_error_border",
+      "value": "#9F3B32"
+    },
+    {
       "name": "guard_status_item_background",
       "value": "#172029"
     },
