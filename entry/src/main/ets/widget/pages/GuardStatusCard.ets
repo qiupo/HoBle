@@ -1,15 +1,22 @@
 let storage: LocalStorage = new LocalStorage();
 
+enum StatusPanelSlot {
+  TopStart = 'topStart',
+  TopEnd = 'topEnd',
+  BottomStart = 'bottomStart',
+  BottomEnd = 'bottomEnd'
+}
+
 @Entry(storage)
 @Component
 struct GuardStatusCard {
   @LocalStorageProp('enabledText') enabledText: string = '等待同步';
-  @LocalStorageProp('buttonText') buttonText: string = '开启守护';
+  @LocalStorageProp('buttonText') buttonText: string = '启动守护';
   @LocalStorageProp('bleState') bleState: string = '待刷新';
   @LocalStorageProp('advertisingText') advertisingText: string = '待刷新';
   @LocalStorageProp('backgroundText') backgroundText: string = '待刷新';
   @LocalStorageProp('permissionText') permissionText: string = '待刷新';
-  @LocalStorageProp('lastMessage') lastMessage: string = '点击按钮开启守护并刷新状态';
+  @LocalStorageProp('lastMessage') lastMessage: string = '点击按钮启动守护并刷新状态';
   @LocalStorageProp('updatedAt') updatedAt: string = '未同步';
   @LocalStorageProp('statusTone') statusTone: string = 'idle';
   private readonly startAction: string = 'start_guard';
@@ -19,24 +26,25 @@ struct GuardStatusCard {
     Stack() {
       Column() {
         Row() {
-          this.StatusCard('蓝牙', this.bleState === '蓝牙开启')
+          this.StatusPanel('蓝牙', this.bleState === '蓝牙开启', StatusPanelSlot.TopStart)
           Blank()
-          this.StatusCard('广播', this.advertisingText === '广播中')
+          this.StatusPanel('广播', this.advertisingText === '广播中', StatusPanelSlot.TopEnd)
         }
         .width('100%')
 
         Blank()
 
         Row() {
-          this.StatusCard('后台', this.backgroundText === '后台运行中')
+          this.StatusPanel('后台', this.backgroundText === '后台运行中', StatusPanelSlot.BottomStart)
           Blank()
-          this.StatusCard('权限', this.permissionText === '权限已授权')
+          this.StatusPanel('权限', this.permissionText === '权限已授权', StatusPanelSlot.BottomEnd)
         }
         .width('100%')
       }
-      .width('100%')
-      .height('100%')
+      .width(132)
+      .height(132)
       .zIndex(1)
+      .align(Alignment.Center)
 
       FormLink({
         action: 'message',
@@ -46,19 +54,20 @@ struct GuardStatusCard {
       }) {
         Row() {
           Text(this.centerButtonText())
-            .fontSize(14)
+            .fontSize(13)
             .fontWeight(FontWeight.Bold)
-            .fontColor(Color.White)
+            .fontColor(this.buttonTextColor())
             .maxLines(1)
             .textOverflow({ overflow: TextOverflow.Ellipsis })
         }
-        .width(64)
-        .height(64)
+        .width(76)
+        .height(76)
         .justifyContent(FlexAlign.Center)
-        .borderRadius(32)
+        .borderRadius(38)
         .backgroundColor(this.buttonColor())
         .backgroundBlurStyle(BlurStyle.COMPONENT_THIN)
-        .shadow({ radius: 22, color: '#4D2563EB', offsetX: 0, offsetY: 7 })
+        .border({ width: 3, color: $r('app.color.guard_card_background') })
+        .shadow({ radius: 20, color: '#402563EB', offsetX: 0, offsetY: 6 })
       }
       .zIndex(2)
       .align(Alignment.Center)
@@ -73,27 +82,36 @@ struct GuardStatusCard {
   }
 
   @Builder
-  private StatusCard(label: string, active: boolean) {
-    Row() {
+  private StatusPanel(label: string, active: boolean, slot: StatusPanelSlot) {
+    Stack({ alignContent: Alignment.Center }) {
+      Column()
+        .width(64)
+        .height(64)
+        .borderRadius(16)
+        .backgroundColor(this.pillBackground(active))
+        .border({ width: 1, color: this.pillBorderColor(active) })
+
       Text(label)
+        .width(24)
+        .height(16)
         .fontSize(10)
         .fontWeight(FontWeight.Medium)
         .fontColor(active ? $r('app.color.guard_success') : $r('app.color.guard_diagnostic_critical'))
         .maxLines(1)
-      Blank()
+        .textAlign(TextAlign.Center)
+        .position(this.labelPosition(slot))
+
       Text(active ? '✓' : '✕')
+        .width(16)
+        .height(16)
         .fontSize(15)
         .fontWeight(FontWeight.Bold)
         .fontColor(active ? $r('app.color.guard_success') : $r('app.color.guard_diagnostic_critical'))
+        .textAlign(TextAlign.Center)
+        .position(this.markPosition(slot))
     }
-    .width(62)
-    .height(34)
-    .padding({ left: 9, right: 8 })
-    .borderRadius(12)
-    .backgroundColor(this.pillBackground(active))
-    .backgroundBlurStyle(BlurStyle.COMPONENT_ULTRA_THIN)
-    .border({ width: 1, color: this.pillBorderColor(active) })
-    .shadow({ radius: 8, color: this.pillShadowColor(active), offsetX: 0, offsetY: 3 })
+    .width(64)
+    .height(64)
   }
 
   private buttonColor(): ResourceColor {
@@ -103,7 +121,17 @@ struct GuardStatusCard {
     if (this.statusTone === 'pending') {
       return $r('app.color.guard_warning');
     }
+    if (this.statusTone === 'running') {
+      return $r('app.color.guard_diagnostic_critical');
+    }
     return $r('app.color.guard_primary');
+  }
+
+  private buttonTextColor(): ResourceColor {
+    if (this.statusTone === 'pending') {
+      return $r('app.color.guard_text_primary');
+    }
+    return Color.White;
   }
 
   private pillBackground(active: boolean): ResourceColor {
@@ -120,11 +148,30 @@ struct GuardStatusCard {
     return $r('app.color.guard_widget_status_error_border');
   }
 
-  private pillShadowColor(active: boolean): ResourceColor {
-    if (active) {
-      return '#3316A34A';
+  private labelPosition(slot: StatusPanelSlot): Position {
+    if (slot === StatusPanelSlot.TopStart) {
+      return { x: 10, y: 10 };
     }
-    return '#33B42318';
+    if (slot === StatusPanelSlot.TopEnd) {
+      return { x: 18, y: 10 };
+    }
+    if (slot === StatusPanelSlot.BottomStart) {
+      return { x: 10, y: 40 };
+    }
+    return { x: 18, y: 40 };
+  }
+
+  private markPosition(slot: StatusPanelSlot): Position {
+    if (slot === StatusPanelSlot.TopStart) {
+      return { x: 39, y: 8 };
+    }
+    if (slot === StatusPanelSlot.TopEnd) {
+      return { x: 45, y: 8 };
+    }
+    if (slot === StatusPanelSlot.BottomStart) {
+      return { x: 39, y: 38 };
+    }
+    return { x: 45, y: 38 };
   }
 
   private centerButtonText(): string {

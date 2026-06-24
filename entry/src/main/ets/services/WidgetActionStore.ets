@@ -28,3 +28,7 @@ function flushPendingAction(): void {
 export function isStartGuardAction(action: string): boolean {
   return action === 'start_guard';
 }
+
+export function isStopGuardAction(action: string): boolean {
+  return action === 'stop_guard';
+}

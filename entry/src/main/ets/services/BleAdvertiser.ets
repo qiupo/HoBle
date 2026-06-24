@@ -69,13 +69,19 @@ export class BleAdvertiser {
   }
 
   async stop(): Promise<void> {
-    if (!this.advertising) {
-      return;
-    }
-    if (this.advertisingId >= 0) {
-      await ble.stopAdvertising(this.advertisingId);
-    } else {
-      ble.stopAdvertising();
+    try {
+      if (this.advertisingId >= 0) {
+        await ble.stopAdvertising(this.advertisingId);
+      } else {
+        ble.stopAdvertising();
+      }
+    } catch (err) {
+      if (this.advertisingId >= 0) {
+        try {
+          ble.stopAdvertising();
+        } catch (fallbackErr) {
+        }
+      }
     }
     this.advertisingId = -1;
     this.advertising = false;

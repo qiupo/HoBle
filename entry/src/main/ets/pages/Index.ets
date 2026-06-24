@@ -1,7 +1,7 @@
 import { common } from '@kit.AbilityKit';
 import { BlePowerState, GuardConfig, GuardDiagnosticSeverity, GuardRunState, GuardSnapshot } from '../model/GuardModels';
 import { GuardCenter } from '../services/GuardCenter';
-import { isStartGuardAction, setWidgetActionHandler } from '../services/WidgetActionStore';
+import { isStartGuardAction, isStopGuardAction, setWidgetActionHandler } from '../services/WidgetActionStore';
 
 enum LogFilter {
   ALL = 'all',
@@ -204,18 +204,30 @@ struct Index {
   @Builder
   private FloatingGuardButton() {
     Stack({ alignContent: Alignment.Center }) {
-      Button(this.hasGuardResidue() ? $r('app.string.guard_stop') : $r('app.string.guard_start'))
+      Button(this.isGuardActive() ? $r('app.string.guard_stop') : $r('app.string.guard_start'))
         .width('100%')
         .height(54)
         .borderRadius(22)
-        .backgroundColor($r('app.color.guard_primary'))
-        .backgroundBlurStyle(BlurStyle.COMPONENT_THIN)
+        .backgroundColor(this.floatingButtonBackgroundColor())
+        .backgroundEffect({
+          radius: 18,
+          saturation: this.isGuardActive() ? 1.25 : 1.1,
+          brightness: this.isGuardActive() ? 0.95 : 1.08,
+          color: this.isGuardActive() ? '#26B42318' : '#1F2563EB'
+        })
+        .foregroundEffect({ radius: 1 })
         .fontWeight(FontWeight.Medium)
-        .lightUpEffect(this.hasGuardResidue() ? 1 : 0.8)
-        .shadow({ radius: 18, color: '#402563EB', offsetX: 0, offsetY: 8 })
+        .fontColor(this.floatingButtonTextColor())
+        .lightUpEffect(this.isGuardActive() ? 1 : 0.92)
+        .shadow({
+          radius: 18,
+          color: this.isGuardActive() ? '#33B42318' : '#402563EB',
+          offsetX: 0,
+          offsetY: 8
+        })
         .enabled(this.snapshot.runState !== GuardRunState.STARTING && this.snapshot.runState !== GuardRunState.STOPPING)
         .onClick(() => {
-          if (this.hasGuardResidue()) {
+          if (this.isGuardActive()) {
             this.guardCenter?.stopGuard();
           } else {
             this.guardCenter?.startGuard();
@@ -311,7 +323,19 @@ struct Index {
   }
 
   private isGuardActive(): boolean {
-    return this.snapshot.advertising && this.snapshot.backgroundRunning;
+    return this.snapshot.runState === GuardRunState.RUNNING ||
+      (this.snapshot.advertising && this.snapshot.backgroundRunning);
+  }
+
+  private floatingButtonBackgroundColor(): ResourceColor {
+    if (this.isGuardActive()) {
+      return $r('app.color.guard_diagnostic_critical');
+    }
+    return $r('app.color.guard_primary');
+  }
+
+  private floatingButtonTextColor(): ResourceColor {
+    return Color.White;
   }
 
   private hasGuardResidue(): boolean {
@@ -395,7 +419,20 @@ struct Index {
   }
 
   private tryConsumeWidgetAction(): void {
-    if (!this.guardCenterReady || this.guardCenter === undefined || !isStartGuardAction(this.pendingWidgetAction)) {
+    if (!this.guardCenterReady || this.guardCenter === undefined || this.pendingWidgetAction.length === 0) {
+      return;
+    }
+    if (isStartGuardAction(this.pendingWidgetAction)) {
+      this.tryStartGuardFromWidget();
+      return;
+    }
+    if (isStopGuardAction(this.pendingWidgetAction)) {
+      this.tryStopGuardFromWidget();
+    }
+  }
+
+  private tryStartGuardFromWidget(): void {
+    if (this.guardCenter === undefined) {
       return;
     }
     if (this.snapshot.runState === GuardRunState.RUNNING ||
@@ -406,6 +443,20 @@ struct Index {
     }
     this.pendingWidgetAction = '';
     this.guardCenter.startGuard().catch(() => {
+    });
+  }
+
+  private tryStopGuardFromWidget(): void {
+    if (this.guardCenter === undefined) {
+      return;
+    }
+    if (this.snapshot.runState === GuardRunState.STARTING ||
+      this.snapshot.runState === GuardRunState.STOPPING) {
+      this.pendingWidgetAction = '';
+      return;
+    }
+    this.pendingWidgetAction = '';
+    this.guardCenter.stopGuard().catch(() => {
     });
   }
 

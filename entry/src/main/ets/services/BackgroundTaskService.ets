@@ -102,11 +102,15 @@ export class BackgroundTaskService {
   }
 
   async stop(): Promise<void> {
-    if (!this.running) {
+    if (!this.running && this.continuousTaskId === 0) {
       this.stopLocationWatcher();
       return;
     }
-    await backgroundTaskManager.stopBackgroundRunning(this.context, this.continuousTaskId);
+    if (this.continuousTaskId > 0) {
+      await backgroundTaskManager.stopBackgroundRunning(this.context, this.continuousTaskId);
+    } else {
+      await backgroundTaskManager.stopBackgroundRunning(this.context);
+    }
     this.running = false;
     this.continuousTaskId = 0;
     this.stopLocationWatcher();

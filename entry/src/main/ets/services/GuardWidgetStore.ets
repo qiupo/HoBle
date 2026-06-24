@@ -22,8 +22,8 @@ export class GuardWidgetData {
   advertisingText: string = '待刷新';
   backgroundText: string = '待刷新';
   permissionText: string = '待刷新';
-  buttonText: string = '开启守护';
-  lastMessage: string = '点击按钮开启守护并刷新状态';
+  buttonText: string = '启动守护';
+  lastMessage: string = '点击按钮启动守护并刷新状态';
   updatedAt: string = '未同步';
   statusTone: string = 'idle';
 }
@@ -46,7 +46,7 @@ export class GuardWidgetStore {
       data.advertisingText = await store.get(KEY_ADVERTISING_TEXT, '待刷新') as string;
       data.backgroundText = await store.get(KEY_BACKGROUND_TEXT, '待刷新') as string;
       data.permissionText = await store.get(KEY_PERMISSION_TEXT, '待刷新') as string;
-      data.lastMessage = await store.get(KEY_LAST_MESSAGE, '点击按钮开启守护并刷新状态') as string;
+      data.lastMessage = await store.get(KEY_LAST_MESSAGE, '点击按钮启动守护并刷新状态') as string;
       data.updatedAt = await store.get(KEY_UPDATED_AT, '未同步') as string;
       data.runState = this.deriveRunState(enabled, data);
       data.statusTone = this.buildStatusTone(enabled, data);
@@ -68,7 +68,7 @@ export class GuardWidgetStore {
       data.advertisingText = store.getSync(KEY_ADVERTISING_TEXT, '待刷新') as string;
       data.backgroundText = store.getSync(KEY_BACKGROUND_TEXT, '待刷新') as string;
       data.permissionText = store.getSync(KEY_PERMISSION_TEXT, '待刷新') as string;
-      data.lastMessage = store.getSync(KEY_LAST_MESSAGE, '点击按钮开启守护并刷新状态') as string;
+      data.lastMessage = store.getSync(KEY_LAST_MESSAGE, '点击按钮启动守护并刷新状态') as string;
       data.updatedAt = store.getSync(KEY_UPDATED_AT, '未同步') as string;
       data.runState = this.deriveRunState(enabled, data);
       data.statusTone = this.buildStatusTone(enabled, data);
@@ -208,7 +208,7 @@ export class GuardWidgetStore {
 
   private buildButtonText(data: GuardWidgetData): string {
     if (this.isRunning(data)) {
-      return '守护运行中';
+      return '停止守护';
     }
     if (data.runState === GuardRunState.STARTING) {
       return '启动中';
@@ -216,7 +216,7 @@ export class GuardWidgetStore {
     if (data.runState === GuardRunState.STOPPING) {
       return '停止中';
     }
-    return '开启守护';
+    return '启动守护';
   }
 
   private deriveRunState(enabled: boolean, data: GuardWidgetData): string {
@@ -246,8 +246,8 @@ export class GuardWidgetStore {
       data.enabledText = '守护已启用';
       data.runState = GuardRunState.STOPPED;
       data.statusTone = 'pending';
-      data.buttonText = '开启守护';
-      data.lastMessage = '组件未拿到运行快照，点击开启守护刷新';
+      data.buttonText = '启动守护';
+      data.lastMessage = '组件未拿到运行快照，点击启动守护刷新';
     } else if (data.enabledText === '等待同步') {
       data.enabledText = '守护未启用';
     }
@@ -275,8 +275,9 @@ export class GuardWidgetStore {
   }
 
   private isRunning(data: GuardWidgetData): boolean {
-    return data.bleState === '蓝牙开启' &&
+    return data.runState === GuardRunState.RUNNING ||
+      (data.bleState === '蓝牙开启' &&
       data.advertisingText === '广播中' &&
-      data.backgroundText === '后台运行中';
+      data.backgroundText === '后台运行中');
   }
 }
