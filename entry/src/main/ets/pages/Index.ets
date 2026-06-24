@@ -274,6 +274,11 @@ struct Index {
         }
         .width('100%')
       }
+      // Share vertical gestures with the page scroll when the log area is nested.
+      .nestedScroll({
+        scrollForward: NestedScrollMode.SELF_FIRST,
+        scrollBackward: NestedScrollMode.SELF_FIRST
+      })
       .height(160)
       .width('100%')
     }
